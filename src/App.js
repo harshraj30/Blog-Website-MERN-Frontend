@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import Layout from './Components/Layout';
+import SigninCreatePage from './pages/SigninCreatePage';
+import UserPage from './pages/UserPage';
+import AddBlog from './pages/AddBlog';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const url = "//localhost:4000"
+
+  const [sessionUser , setSessionUser] = useState({username:""})
+
+  useEffect(() => {
+    axios.get(url + '/api/auth/user/'+localStorage.getItem('user')).then((res)=>{
+      setSessionUser(res.data)
+    })
+  }, [])
+    return (
+    <Routes>
+      {/* <Route path='/SigninCreatePage' element={<Layout url={url} sessionUser={sessionUser} setSessionUser={setSessionUser}/>} /> */}
+      <Route path='/SigninCreatePage' element={<SigninCreatePage  url={url}/>} />
+      <Route path='/UserPage' element={<UserPage url={url} sessionUser={sessionUser} setSessionUser={setSessionUser}/>}/>
+      <Route path='/add-blogs' element={<AddBlog url={url} sessionUser={sessionUser} setSessionUser={setSessionUser}/>}/>
+
+    </Routes>
   );
 }
 
