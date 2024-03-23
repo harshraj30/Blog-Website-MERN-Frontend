@@ -20,7 +20,7 @@ function App() {
   }, [])
     return (
     <Routes>
-      {/* <Route path='/SigninCreatePage' element={<Layout url={url} sessionUser={sessionUser} setSessionUser={setSessionUser}/>} /> */}
+      <Route path='/' element={<Layout url={url} sessionUser={sessionUser} setSessionUser={setSessionUser}/>} />
       <Route path='/SigninCreatePage' element={<SigninCreatePage  url={url}/>} />
       <Route path='/UserPage' element={<UserPage url={url} sessionUser={sessionUser} setSessionUser={setSessionUser}/>}/>
       <Route path='/add-blogs' element={<AddBlog url={url} sessionUser={sessionUser} setSessionUser={setSessionUser}/>}/>

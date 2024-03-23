@@ -24,7 +24,7 @@ const Navbar = ({ url , children , sessionUser , setSessionUser }) => {
         <div className="w-[90%] py-4 flex justify-between items-center">
           <h1 className='text-3xl text-orange-500 font-bold'>Logo</h1>
           <div className="flex">
-            <input placeholder='Search ' className='px-2 rounded-l-lg outline-none text-xl border border-r-0 hover:border-orange-500' size={42} type="text" name="" id="" />
+            <input placeholder='Search ' className='px-2 rounded-l-lg outline-none text-xl border border-r-0 focus:border-orange-500 hover:border-orange-500' size={42} type="text" name="" id="" />
             <button className=' rounded-r-lg py-3 px-5  bg-orange-500 hover:bg-orange-600 text-white outline-none'>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
